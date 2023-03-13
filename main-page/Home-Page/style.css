@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    border-bottom: 1px solid #70FF00;
+    font-weight: 600;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button{
+    position: relative;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 0 10px;
+}
+
+.button:after{
+    content: "";
+    position: absolute;
+    background-color: #70FF00;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.button:hover:after{
+    width: 100%;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #121212;
+}
+
+main{
+    min-height: 100%;
+    margin: 150px 0px 150px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 60px;
+}
+
+.card-info {
+    height: 792.5px;
+    width: 550px;
+    background: #505050;
+    border-radius: 30px;
+    box-shadow: 5px 10px 15px 1px black, 20px 25px 0px 2px #70FF00;
+}
+
+.about-me {
+    padding: 20px;
+    font-size: 120%;
+    background: #505050;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+  
+.about-me  h2 {
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.about-me p {
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.about-me strong {
+    color: #70FF00;
+}
+
+.github-link{
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: 0.3s;
+    transition-property: color;
+}
+
+.github-link:hover{
+    color: #70FF00;
+    text-decoration: underline;
+}
+
+.card-image {
+    position: relative;
+    max-width: 100%;
+    height: 600px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px 1px black, 13px 12px 1px 3px #70FF00;
+}
+
+footer{
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    color: #FFFFFF;
+    border-top: 1px solid #70FF00;
+    font-weight: 600;
+    bottom: 0;
+}
+
+label{
+    display: none;
+    color: #FFFFFF;
+}
+
+#check{
+    z-index: 3;
+    display: none;
+}
+
+/* Responsive styles */
+
+@media (max-width: 960px){
+    .navigation{
+        display: none;
+    }
+
+    label{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property: color;
+    }
+
+    label:hover{
+        color: #70FF00;
+    }
+
+    label .close-btn{
+        display: none;
+    }
+    
+    #check:checked ~ header .navigation{
+        z-index: 2;
+        position: fixed;
+        background-color: #2c2c2c;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #check:checked ~ header .navigation a{
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        background: none;
+    }
+
+    #check:checked ~ header label .menu-btn{
+        display: none;
+    }
+
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+        background: none;
+    }
+
+    label .both-menu-btn{
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 930px){
+
+    footer{
+        display: block;
+    }
+
+    .card-image{
+        width: 230px;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .card-info{
+        width: 370px;
+        height: auto;
+        margin: 0 auto;
+        box-shadow: none;
+    }
+
+    .about-me h2{
+        padding: 20px 0px 0px;
+    }
+
+    .about-me p{
+        padding: 20px 0px 0px;
+    }
+}
